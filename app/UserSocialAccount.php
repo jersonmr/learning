@@ -4,12 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Teacher extends Model
+class UserSocialAccount extends Model
 {
-    public function courses()
-    {
-        return $this->hasMany(Course::class);
-    }
+    protected $fillable = ['user_id', 'provider', 'provider_uid'];
+
+    public $timestamps = false;
 
     public function user()
     {
